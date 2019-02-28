@@ -5,7 +5,7 @@ import java.util.Comparator;
 public class day3 {
 
 	public static void main(String[] args) {
-		int[] numbers = { 320, 32, 24, 12, 123 };
+		int[] numbers = { 320, 32, 24, 12, 123, 34 };
 		System.out.println(solution(numbers));
 	}
 
