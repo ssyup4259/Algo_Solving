@@ -79,7 +79,6 @@ public class Main_백준_2234_성곽 {
 		System.out.println(maxZ);
 
 		maxB = 0;
-		int cnt = 0;
 		for (int i = 0; i < m; i++) {
 			for (int j = 0; j < n; j++) {
 				if (!visit[0][i][j]) {
