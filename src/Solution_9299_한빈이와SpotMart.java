@@ -21,7 +21,7 @@ public class Solution_9299_한빈이와SpotMart {
 		int T = sc.nextInt();
 		for (int tc = 1; tc <= T; tc++) {
 			N = sc.nextInt(); // 최대 1000
-			M = sc.nextInt(); // 최대 2000000
+			M = sc.nextInt();
 			a = new int[N];
 			for (int i = 0; i < N; i++) {
 				a[i] = sc.nextInt();
