@@ -6,6 +6,5 @@ public class abcd {
 		System.out.println(a & 1 << 1);
 		int b = 123;
 		System.out.println(a + " : " + b);
-		System.out.println(aaa);
 	}
 }
