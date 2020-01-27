@@ -26,6 +26,7 @@ public class Main_백준_9465_스티커 {
 			memo[1][0] = arr[1][0];
 			memo[0][1] = memo[1][0] + arr[0][1];
 			memo[1][1] = memo[0][0] + arr[1][1];
+			
 			int result = 0;
 			for (int i = 2; i < n; i++) {
 				for (int r = 0; r < 2; r++) {
@@ -38,6 +39,7 @@ public class Main_백준_9465_스티커 {
 					}
 				}
 			}
+			
 			System.out.println(result);
 		}
 	}
