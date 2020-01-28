@@ -3,7 +3,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Main_¹éÁØ_9465_½ºÆ¼Ä¿ {
+public class Main_ë°±ì¤€_9465_ìŠ¤í‹°ì»¤
+{
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -43,5 +44,4 @@ public class Main_¹éÁØ_9465_½ºÆ¼Ä¿ {
 			System.out.println(result);
 		}
 	}
-
 }

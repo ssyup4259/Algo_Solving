@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main_¹éÁØ_3019_Å×Æ®¸®½º {
+public class Main_ë°±ì¤€_3019_í…ŒíŠ¸ë¦¬ìŠ¤ {
 	static int C, P;
 	static int[] arr;
 
