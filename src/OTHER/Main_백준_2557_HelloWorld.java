@@ -1,3 +1,4 @@
+package OTHER;
 
 public class Main_백준_2557_HelloWorld {
 
