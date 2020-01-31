@@ -1,3 +1,4 @@
+package OTHER;
 import java.util.Scanner;
 
 public class Main_백준_10869_사칙연산 {
