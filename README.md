@@ -1,2 +1,3 @@
-# BOJ
-백준 온라인 저지 문제풀이
+백준 온라인 저지
+Software Academy
+문제풀이
