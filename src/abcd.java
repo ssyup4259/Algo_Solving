@@ -5,6 +5,7 @@ public class abcd {
 		int a = 12;
 		System.out.println(a & 1 << 1);
 		int b = 123;
+		int c = 123;
 		System.out.println(a + " : " + b);
 	}
 }
