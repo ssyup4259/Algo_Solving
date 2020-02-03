@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Main_백준_3019_테트리스 {
 	static int C, P;
 	static int[] arr;
-
+	//테트리스
 	static int solve1() {
 		int sum = 0;
 		sum += C;
