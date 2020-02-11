@@ -2,5 +2,4 @@
 Samsung Software Academy
 문제풀이
 깃헙 문제
-asdasda
-asdasd
+### 깃헙 메일 주소 ssyup8717
