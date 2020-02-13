@@ -19,7 +19,6 @@ public class Main_백준_9944_NxM보드완주하기 {
 			this.d = d;
 			this.cnt = cnt;
 		}
-
 	}
 
 	static boolean isRange(int r, int c) {
@@ -39,14 +38,12 @@ public class Main_백준_9944_NxM보드완주하기 {
 		return new Info(r - dir[d][0], c - dir[d][1], d, 0);
 	}
 
-	static void rollback(int r, int c, int d) {
-		do {
-			visit[r][c] = false;
-			r = r + dir[d][0];
-			c = c + dir[d][1];
-			count--;
-		} while (isRange(r, c) && map[r][c].equals(".") && visit[r][c]);
-
+	static void rollback(int r, int c, int d, int real) {
+		visit[r][c] = false;
+		for (int i = 1; i < real; i++) {
+			visit[r + dir[d][0] * i][c + dir[d][1] * i] = false;
+		}
+		count -= real;
 	}
 
 	static void solve(int r, int c, int cc) {
@@ -56,13 +53,15 @@ public class Main_백준_9944_NxM보드완주하기 {
 			}
 			return;
 		}
-		for (int dd = 0; dd < 4; dd++) {
-			int nextR = r + dir[dd][0];
-			int nextC = c + dir[dd][1];
+		for (int d = 0; d < 4; d++) {
+			int nextR = r + dir[d][0];
+			int nextC = c + dir[d][1];
+			Info next = go(r, c, d); // 일단 가
 			if (isRange(nextR, nextC) && map[nextR][nextC].equals(".") && !visit[nextR][nextC]) {
-				Info next = go(r, c, dd); // 일단 가
-				solve(nextR, nextC, cc + 1);
-				rollback(nextR, nextC, dd);
+				int real = count;
+				real = count - real;
+				solve(next.r, next.c, cc + 1);
+				rollback(r, c, d, real);
 			}
 		}
 	}
