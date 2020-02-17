@@ -2,4 +2,5 @@
 
 Samsung Software Academy
 문제풀이 자바
-### 깃헙 메일 주소 ssyup8717
+### 깃헙 메일 주소 ssyup8717@gmail.com
+
