@@ -2,7 +2,7 @@ package DP;
 
 import java.util.Scanner;
 
-public class Ex1932 {
+public class Main_백준_1932_정수삼각형 {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
