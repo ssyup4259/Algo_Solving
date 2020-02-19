@@ -4,7 +4,7 @@
 
 - BOJ : https://www.acmicpc.net/
 
-  Main_백준
+  Main\_백준\_num\_name
 
 - SW Expert Academy : https://swexpertacademy.com/main/main.do
 
@@ -14,9 +14,12 @@
 
 ### 알고리즘 분류
 
-- Search (탐색)
+- Bfs
+- Dfs
+- DP
+- BruteForce
 
-  bfs / dfs / bruteforce / binary search
+  bruteforce / greedy
 
 - Graph (그래프)
 
@@ -24,4 +27,4 @@
 
 - Simulation (구현)
 
-  dp / simulation / string
+  simulation / string
