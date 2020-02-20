@@ -6,16 +6,6 @@ import java.util.Scanner;
 
 public class Main_백준_1697_숨바꼭질 {
 	static int N, K;
-	static boolean[] visit = new boolean[100001];
-
-	static class Info {
-		int r, time;
-
-		Info(int r, int time) {
-			this.r = r;
-			this.time = time;
-		}
-	}
 
 	static boolean isRange(int r) {
 		if (r < 0 || r > 100000) {
@@ -24,46 +14,46 @@ public class Main_백준_1697_숨바꼭질 {
 		return true;
 	}
 
-	static void bfs() {
-		Queue<Info> que = new LinkedList<>();
-		que.add(new Info(N, 0));
+	static int solve() {
+		Queue<int[]> que = new LinkedList<>();
+		que.add(new int[] { N, 0 });
+		boolean[] visit = new boolean[100001];
 		visit[N] = true;
-
 		while (!que.isEmpty()) {
-			int now = que.peek().r;
-			int time = que.poll().time;
+			int now = que.peek()[0];
+			int cnt = que.poll()[1];
 
 			if (now == K) {
-				System.out.println(time);
-				return;
+				return cnt;
 			}
 
-			// 3�������� bfs
-			int next = now - 1;
+			// +1 칸 이동
+			int next = now + 1;
 			if (isRange(next) && !visit[next]) {
-				que.add(new Info(next, time + 1));
 				visit[next] = true;
+				que.add(new int[] { next, cnt + 1 });
 			}
 
-			next = now + 1;
+			next = now - 1;
 			if (isRange(next) && !visit[next]) {
-				que.add(new Info(next, time + 1));
 				visit[next] = true;
+				que.add(new int[] { next, cnt + 1 });
 			}
 
 			next = now * 2;
 			if (isRange(next) && !visit[next]) {
-				que.add(new Info(next, time + 1));
 				visit[next] = true;
+				que.add(new int[] { next, cnt + 1 });
 			}
 		}
+		return -1;
 	}
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		N = sc.nextInt();
 		K = sc.nextInt();
-		bfs();
+		System.out.println(solve());
 	}
 
 }

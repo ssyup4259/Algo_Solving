@@ -2,7 +2,7 @@ import java.util.HashSet;
 import java.util.Scanner;
 
 public class Solution_D4_2819_격자판의숫자이어붙이기 {
-	static int[][] map;
+ static int[][] map;
 	static final int[][] dir = { { 1, 0 }, { 0, 1 }, { -1, 0 }, { 0, -1 } };
 	static HashSet<String> hs;
 
