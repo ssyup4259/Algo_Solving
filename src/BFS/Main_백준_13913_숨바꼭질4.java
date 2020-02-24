@@ -1,6 +1,8 @@
 package BFS;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 import java.util.Scanner;
 
@@ -29,13 +31,19 @@ public class Main_백준_13913_숨바꼭질4 {
 			if (now == K) {
 				System.out.println(visited[now] - 1);
 				StringBuilder sb = new StringBuilder();
-				sb.append(N);
+				List<Integer> list = new ArrayList<>();
 				// 경로 출력
+				sb.append(N).append(" ");
 				while (now != path[now]) {
 					// 루트 나올대가지 반복
+					// insert(x, y) x번 위치에 y를 삽입
+					list.add(now);
 					now = path[now];
 				}
-				System.out.println(result);
+				for (int i = list.size() - 1; i >= 0; i--) {
+					sb.append(list.get(i)).append(" ");
+				}
+				System.out.println(sb);
 				return;
 			}
 
