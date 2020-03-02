@@ -8,7 +8,7 @@
 
 - SW Expert Academy : https://swexpertacademy.com/main/main.do
 
-  Solution_
+  Solution\_num\_name
 
 
 
@@ -28,3 +28,5 @@
 - Simulation (구현)
 
   simulation / string
+
+- Other
