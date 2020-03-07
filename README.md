@@ -30,3 +30,5 @@
   simulation / string
 
 - Other
+
+  binary search
