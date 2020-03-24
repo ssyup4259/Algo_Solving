@@ -9,21 +9,17 @@ public class Main_백준_2164_카드2 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int N = sc.nextInt();
-		List<Integer> list = new ArrayList<>();
-		for (int i = 1; i <= N; i++) {
-			list.add(i);
+		int num = 1;
+		int cnt = 0;
+		while (num < N) {
+			num *= 2;
+			cnt++;
 		}
-
-		while (list.size() > 1) {
-			list.remove(0);
-			if (list.size() == 1) {
-				break;
-			}
-			int num = list.get(0);
-			list.remove(0);
-			list.add(num);
+		if (num == N) {
+			System.out.println(N);
+		} else {
+			System.out.println((N - num / 2) * 2);
 		}
-		System.out.println(list.get(0));
 	}
 
 }
