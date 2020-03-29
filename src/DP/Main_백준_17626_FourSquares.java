@@ -1,4 +1,4 @@
-package OTHER;
+package DP;
 
 import java.util.Scanner;
 
