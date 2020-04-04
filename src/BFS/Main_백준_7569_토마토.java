@@ -6,10 +6,10 @@ import java.util.Scanner;
 
 public class Main_백준_7569_토마토 {
 	static final int[][] dir = { { 0, 0, 1 }, { 0, 0, -1 }, { 0, 1, 0 }, { 0, -1, 0 }, { 1, 0, 0 }, { -1, 0, 0 } };
-	static int M, N, H, cnt;
+	static int M, N, H, min;
 	static int[][][] arr, map;
-	static int min, res;
 	static boolean[][][] visit;
+	static Queue<Info> que = new LinkedList<>();
 
 	static class Info {
 		int h, r, c, cnt;
@@ -29,13 +29,12 @@ public class Main_백준_7569_토마토 {
 		return true;
 	}
 
-	static void bfs(int h, int r, int c) {
-		Queue<Info> que = new LinkedList<>();
-		que.add(new Info(h, r, c, 0));
-		int ans = 0;
+	static void bfs() {
 		while (!que.isEmpty()) {
 			Info now = que.poll();
-			ans = now.cnt;
+			if (min < now.cnt) {
+				min = now.cnt;
+			}
 			for (int i = 0; i < 6; i++) {
 				int nextH = now.h + dir[i][0];
 				int nextR = now.r + dir[i][1];
@@ -47,9 +46,6 @@ public class Main_백준_7569_토마토 {
 					que.add(new Info(nextH, nextR, nextC, now.cnt + 1));
 				}
 			}
-		}
-		if (ans > min) {
-			min = ans;
 		}
 	}
 
@@ -69,6 +65,8 @@ public class Main_백준_7569_토마토 {
 					map[i][j][k] = arr[i][j][k];
 					if (arr[i][j][k] == 0) {
 						noCnt++;
+					} else if (arr[i][j][k] == 1) {
+						que.add(new Info(i, j, k, 0));
 					}
 				}
 			}
@@ -79,19 +77,9 @@ public class Main_백준_7569_토마토 {
 			return;
 		}
 
-		res = 0;
 		min = 0;
 		visit = new boolean[H][N][M];
-		for (int i = 0; i < H; i++) {
-			for (int j = 0; j < N; j++) {
-				for (int k = 0; k < M; k++) {
-					if (arr[i][j][k] == 1 && !visit[i][j][k]) {
-						visit[i][j][k] = true;
-						bfs(i, j, k);
-					}
-				}
-			}
-		}
+		bfs();
 
 		for (int i = 0; i < H; i++) {
 			for (int j = 0; j < N; j++) {
@@ -103,6 +91,7 @@ public class Main_백준_7569_토마토 {
 				}
 			}
 		}
+
 		System.out.println(min);
 	}
 
