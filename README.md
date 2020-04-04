@@ -23,7 +23,7 @@
 
 - Graph (그래프)
 
-  dijkstra / bellman-ford / kruskal / prim
+  dijkstra / bellman-ford / kruskal / prim / 플로이드-와샬
 
 - Simulation (구현)
 
