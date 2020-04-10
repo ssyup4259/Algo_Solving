@@ -1,9 +1,6 @@
 package GRAPH;
 
-import java.util.Arrays;
-import java.util.LinkedList;
 import java.util.PriorityQueue;
-import java.util.Queue;
 import java.util.Scanner;
 
 public class Main_백준_17472_다리만들기2 {
