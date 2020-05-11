@@ -25,18 +25,15 @@ public class Main_백준_5549_행성탐사 {
 			String str = br.readLine();
 			for (int j = 1; j <= N; j++) {
 				map[i][j] = str.charAt(j - 1);
+				J[i][j] = J[i - 1][j] + J[i][j - 1] - J[i - 1][j - 1];
+				O[i][j] = O[i - 1][j] + O[i][j - 1] - O[i - 1][j - 1];
+				I[i][j] = I[i - 1][j] + I[i][j - 1] - I[i - 1][j - 1];
 				if (map[i][j] == 'J') {
-					J[i][j] = J[i - 1][j] + J[i][j - 1] - J[i - 1][j - 1] + 1;
-					O[i][j] = O[i - 1][j] + O[i][j - 1] - O[i - 1][j - 1];
-					I[i][j] = I[i - 1][j] + I[i][j - 1] - I[i - 1][j - 1];
+					J[i][j]++;
 				} else if (map[i][j] == 'O') {
-					J[i][j] = J[i - 1][j] + J[i][j - 1] - J[i - 1][j - 1];
-					O[i][j] = O[i - 1][j] + O[i][j - 1] - O[i - 1][j - 1] + 1;
-					I[i][j] = I[i - 1][j] + I[i][j - 1] - I[i - 1][j - 1];
+					O[i][j]++;
 				} else {
-					J[i][j] = J[i - 1][j] + J[i][j - 1] - J[i - 1][j - 1];
-					O[i][j] = O[i - 1][j] + O[i][j - 1] - O[i - 1][j - 1];
-					I[i][j] = I[i - 1][j] + I[i][j - 1] - I[i - 1][j - 1] + 1;
+					I[i][j]++;
 				}
 			}
 		}
