@@ -11,6 +11,7 @@ public class Main_백준_13460_구슬탈출2 {
 	static boolean[][][][] visit;
 	static Queue<Info> que;
 
+	// 구슬의 정보를 담을 클래스
 	static class Ball {
 		int r, c;
 
@@ -26,6 +27,7 @@ public class Main_백준_13460_구슬탈출2 {
 
 	}
 
+	// cnt 횟차에 빨간 구슬과 파란 구슬의 위치를 담을 클래스
 	static class Info {
 		Ball blue;
 		Ball red;
@@ -45,6 +47,7 @@ public class Main_백준_13460_구슬탈출2 {
 
 	}
 
+	// 한번 움직일때 파란구슬과 빨간구슬의 위치를 계산
 	static Ball move(Ball now, int d) {
 		Ball next = null;
 		int r = now.r;
@@ -64,6 +67,7 @@ public class Main_백준_13460_구슬탈출2 {
 		return next;
 	}
 
+	// 움직이기 전과 움직이고 나서의 거리를 측정
 	static int beforeAfterLen(Ball now, Ball next) {
 		return Math.abs(now.r - next.r) + Math.abs(now.c - next.c);
 	}
@@ -73,15 +77,15 @@ public class Main_백준_13460_구슬탈출2 {
 
 		while (!que.isEmpty()) {
 			Info now = que.poll();
-			//System.out.println(now);
+			// System.out.println(now);
 			Ball nowR = now.red;
 			Ball nowB = now.blue;
-			if (now.cnt > 10) {
+			if (now.cnt > 10) { // 10번이 넘어가면 실패
 				return -1;
 			}
 
-			if (map[nowR.r][nowR.c] == 'O') {
-				if (map[nowB.r][nowB.c] == 'O') {
+			if (map[nowR.r][nowR.c] == 'O') { // 빨간 구슬이 탈출
+				if (map[nowB.r][nowB.c] == 'O') { // 파란 구슬도 탈출 하면 실패
 					continue;
 				}
 				return now.cnt;
@@ -92,8 +96,8 @@ public class Main_백준_13460_구슬탈출2 {
 				Ball nextB = move(nowB, d);
 
 				if (map[nextR.r][nextR.c] != 'O') {
-					if (nextR.r == nextB.r && nextR.c == nextB.c) {
-						if (beforeAfterLen(nowR, nextR) > beforeAfterLen(nowB, nextB)) {
+					if (nextR.r == nextB.r && nextR.c == nextB.c) { // 빨간구슬과 파란구슬의 움직임이 끝났을때 같은 위치라면
+						if (beforeAfterLen(nowR, nextR) > beforeAfterLen(nowB, nextB)) { // 좀더 짧게 움직인애가 그자리에 있는다.
 							nextR = new Ball(nextR.r - dir[d][0], nextR.c - dir[d][1]);
 						} else {
 							nextB = new Ball(nextB.r - dir[d][0], nextB.c - dir[d][1]);
