@@ -1,4 +1,4 @@
-package SAMSUNG;
+package BRUTEFORCE;
 
 import java.util.Scanner;
 
