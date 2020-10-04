@@ -1,10 +1,10 @@
-package SAMSUNG;
+package SIMULATION;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Scanner;
 
-public class Main_백준_나무재테크 {
+public class Main_백준_16235_나무재테크 {
 	static final int[][] dir = { { -1, -1 }, { -1, 0 }, { -1, 1 }, { 0, -1 }, { 0, 1 }, { 1, -1 }, { 1, 0 }, { 1, 1 } };
 	static int N, M, K, A[][], B[][];
 	static PriorityQueue<Info>[][] map;
