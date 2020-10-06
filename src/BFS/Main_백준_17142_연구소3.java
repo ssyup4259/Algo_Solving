@@ -39,6 +39,7 @@ public class Main_백준_17142_연구소3 {
 
 	static void makeOrder(int idx, int start) {
 		if (idx == M) {
+			// 바이러스 시작점을 구했다면 bfs를 통해 퍼트려 본다.
 			Queue<Info> que = new LinkedList<>();
 			boolean[][] visit = new boolean[N][N];
 			int zero = 0;
@@ -94,7 +95,8 @@ public class Main_백준_17142_연구소3 {
 			}
 			return;
 		}
-
+		
+		// 바이러스를 퍼트릴 아이을 dfs로 구한다.
 		for (int i = start; i < list.size(); i++) {
 			order[idx] = i;
 			makeOrder(idx + 1, i + 1);
